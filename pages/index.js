@@ -2,11 +2,7 @@ import Head from 'next/head';
 
 import { fetchEntries } from '@utils/contentfulPosts';
 
-import Header from '@components/Header';
-import Post from '@components/Post';
-
 export default function Home({ posts }) {
-  console.log(posts);
   return (
     <div className='container'>
       <Head>
