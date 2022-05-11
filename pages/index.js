@@ -18,9 +18,22 @@ export default function Home({ posts }) {
             autoPlay
             muted
           />
-          <p className='absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white'>
-            <a href='https://www.bandcamp.com/petrahermanova'>bandcamp</a>
-          </p>
+          <div className='absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center'>
+            <a
+              href='https://unguarded.bandcamp.com/track/liquid-of-the-eye'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <p className='mb-2'>Liquid of the Eye // bandcamp</p>
+            </a>
+            <a
+              href='https://highheal.bandcamp.com/track/06-summer-interlude-petra-hermanova'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <p>Lacrimosa // bandcamp</p>
+            </a>
+          </div>
         </div>
       </main>
     </div>
