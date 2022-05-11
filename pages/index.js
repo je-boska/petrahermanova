@@ -11,17 +11,16 @@ export default function Home({ posts }) {
       </Head>
 
       <main>
-        <div className='w-screen h-screen'>
-          <iframe
-            className='w-full h-full'
-            src='https://www.youtube.com/embed/0TWZlkcX7wQ'
-            title='YouTube video player'
-            frameBorder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
-            autoplay='1'
-            controls='0'
-          ></iframe>
+        <div className='relative w-screen h-screen'>
+          <video
+            className='w-full h-full object-cover'
+            src='/pet_videobit.mp4'
+            autoPlay
+            muted
+          />
+          <p className='absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white'>
+            <a href='https://www.bandcamp.com/petrahermanova'>bandcamp</a>
+          </p>
         </div>
       </main>
     </div>
