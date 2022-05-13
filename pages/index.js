@@ -19,7 +19,7 @@ export default function Home({ posts }) {
             muted
             loop
           />
-          <div className='absolute bottom-4 left-4 text-white text-center flex gap-3'>
+          <div className='absolute bottom-4 left-1/2 md:left-4 -translate-x-1/2 md:-translate-x-0 text-white text-center flex gap-3'>
             <a
               href='https://petrahermanova.bandcamp.com/'
               target='_blank'
