@@ -17,22 +17,26 @@ export default function Home({ posts }) {
             src='/pet_videobit.mp4'
             autoPlay
             muted
+            loop
           />
+          <div className='absolute bottom-4 left-4 text-white text-center flex gap-3'>
+            <a
+              href='https://petrahermanova.bandcamp.com/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <p className='mb-2'>bandcamp</p>
+            </a>
+            <a
+              href='https://www.instagram.com/petrahermanova/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <p className='mb-2'>instagram</p>
+            </a>
+          </div>
           <div className='absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center'>
-            <a
-              href='https://unguarded.bandcamp.com/track/liquid-of-the-eye'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <p className='mb-2'>Liquid of the Eye // bandcamp</p>
-            </a>
-            <a
-              href='https://highheal.bandcamp.com/track/06-summer-interlude-petra-hermanova'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <p>Lacrimosa // bandcamp</p>
-            </a>
+            <h1 className='mb-2 text-7xl font-title'>Petra Hermanova</h1>
           </div>
         </div>
       </main>
