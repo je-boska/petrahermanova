@@ -35,8 +35,11 @@ export default function Home({ posts }) {
               <p className='mb-2'>instagram</p>
             </a>
           </div>
-          <div className='absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center'>
-            <h1 className='mb-2 text-7xl font-title'>Petra Hermanova</h1>
+          <div className='absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center w-3/4 md:1/2 lg:w-1/3'>
+            <img
+              src='/handwritten.png'
+              alt='Petra Hermanova, written by hand'
+            />
           </div>
         </div>
       </main>
