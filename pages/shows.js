@@ -10,14 +10,20 @@ export default function Shows({ shows }) {
         {shows
           .sort((a, b) => (a.dateTime < b.dateTime ? 1 : -1))
           .map(({ title, dateTime }, idx) => (
-            <li key={idx}>
-              <h3
-                className={cx('text-sm sm:text-base font-thin', {
-                  'line-through': dayjs().isAfter(dateTime),
-                })}
-              >
-                {dayjs(dateTime).format('DD MM YYYY')} - {title}
-              </h3>
+            <li
+              key={idx}
+              className={cx('text-sm sm:text-base font-extralight')}
+            >
+              <div className='flex justify-center flex-col sm:flex-row'>
+                <span
+                  className={cx('mr-2', {
+                    'line-through': dayjs().isAfter(dateTime),
+                  })}
+                >
+                  {dayjs(dateTime).format('DD MM YYYY')}
+                </span>
+                <h3>{title}</h3>
+              </div>
             </li>
           ))}
       </ul>
