@@ -12,7 +12,7 @@ export default function Shows({ shows }) {
           .map(({ title, dateTime }, idx) => (
             <li key={idx}>
               <h3
-                className={cx({
+                className={cx('text-sm sm:text-base font-thin', {
                   'line-through': dayjs().isAfter(dateTime),
                 })}
               >
