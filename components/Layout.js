@@ -14,7 +14,7 @@ export default function Layout({ title, children }) {
         <div className='relative w-screen h-screen'>
           <video
             className='w-full h-full object-cover'
-            src='/webvidbg2023.mp4'
+            src='/webvidbg2023-clr.mp4'
             autoPlay
             muted
             loop
