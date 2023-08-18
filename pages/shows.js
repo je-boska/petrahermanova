@@ -5,7 +5,7 @@ import cx from 'classnames';
 
 export default function Shows({ shows }) {
   return (
-    <Layout>
+    <Layout title='Petra Hermanova | Shows'>
       <ul className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center w-full'>
         {shows
           .sort((a, b) => (a.dateTime < b.dateTime ? 1 : -1))
