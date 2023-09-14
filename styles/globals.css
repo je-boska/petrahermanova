@@ -3,8 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-    @font-face {
-        font-family: Bismarck;
-        src: url("/fonts/Bismarck.otf") format("opentype");
-      }
+  @font-face {
+    font-family: Bismarck;
+    src: url('/fonts/Bismarck.otf') format('opentype');
+  }
+}
+
+.rsvp {
+  background-image: url(/IDE_artwork.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
