@@ -32,11 +32,11 @@ export default function Layout({ title, children }) {
         <meta property='og:image:height' content='628' />
         <meta property='og:image:type' content='image/jpg' />
         <meta property='og:image:alt' content='Petra Hermanova' />
+        <link rel='preload' href='/bine-web.jpg' as='image' />
       </Head>
 
       <main>
         <div className='bg-image'>{children}</div>
-        <img src='/bine-web.jpg' alt='' className='hidden' />
         <img
           className='fixed top-8 left-8 md:left-auto md:right-8 w-32'
           src='/sigil.png'
