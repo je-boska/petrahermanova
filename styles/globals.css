@@ -9,6 +9,11 @@
   }
 }
 
+html,
+body {
+  @apply bg-black;
+}
+
 .rsvp {
   background-image: url(/IDE_artwork.jpeg);
   background-repeat: no-repeat;

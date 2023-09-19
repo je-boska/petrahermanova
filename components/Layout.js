@@ -34,18 +34,7 @@ export default function Layout({ title, children }) {
         <meta property='og:image:alt' content='Petra Hermanova' />
       </Head>
 
-      <main>
-        <div className='relative w-screen h-screen'>
-          <video
-            className='w-full h-full object-cover'
-            src='/webvidbg2023-clr.mp4'
-            autoPlay
-            muted
-            loop
-          />
-          {children}
-        </div>
-      </main>
+      <main>{children}</main>
       <Footer />
     </>
   );
