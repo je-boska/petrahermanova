@@ -6,7 +6,7 @@ import cx from 'classnames';
 export default function Shows({ shows }) {
   return (
     <Layout title='Petra Hermanova | Shows'>
-      <ul className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-center w-full'>
+      <ul className='absolute top-1/2 -translate-y-1/2 text-white w-full'>
         {shows
           .sort((a, b) => (a.dateTime < b.dateTime ? 1 : -1))
           .map(({ title, dateTime }, idx) => (
@@ -14,7 +14,7 @@ export default function Shows({ shows }) {
               key={idx}
               className={cx('text-sm sm:text-base font-extralight')}
             >
-              <div className='flex justify-center flex-col sm:flex-row'>
+              <div className='flex justify-center flex-col sm:flex-row text-center'>
                 <span
                   className={cx('mr-2', {
                     'line-through': dayjs().isAfter(dateTime),

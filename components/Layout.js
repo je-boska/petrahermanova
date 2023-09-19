@@ -32,19 +32,16 @@ export default function Layout({ title, children }) {
         <meta property='og:image:height' content='628' />
         <meta property='og:image:type' content='image/jpg' />
         <meta property='og:image:alt' content='Petra Hermanova' />
+        <link rel='preload' href='/bine-web.jpg' as='image' />
       </Head>
 
       <main>
-        <div className='relative w-screen h-screen'>
-          <video
-            className='w-full h-full object-cover'
-            src='/webvidbg2023-clr.mp4'
-            autoPlay
-            muted
-            loop
-          />
-          {children}
-        </div>
+        <div className='bg-image'>{children}</div>
+        <img
+          className='fixed top-8 left-8 md:left-auto md:right-8 w-20 md:w-32'
+          src='/sigil.png'
+          alt=''
+        />
       </main>
       <Footer />
     </>

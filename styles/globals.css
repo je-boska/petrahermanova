@@ -2,11 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @font-face {
-    font-family: Bismarck;
-    src: url('/fonts/Bismarck.otf') format('opentype');
-  }
+html,
+body {
+  @apply bg-black;
+}
+
+.bg-image {
+  display: block;
+  height: 100vh;
+  background-image: url(/bine-web.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .rsvp {
@@ -14,4 +21,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+::selection {
+  @apply bg-white text-black;
 }
