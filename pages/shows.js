@@ -1,5 +1,5 @@
-import { fetchShows } from '@utils/queries';
-import Layout from '@components/Layout';
+import { fetchShows } from '../utils/queries';
+import Layout from '../components/Layout';
 import dayjs from 'dayjs';
 import cx from 'classnames';
 
