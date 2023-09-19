@@ -36,6 +36,7 @@ export default function Layout({ title, children }) {
 
       <main>
         <div className='bg-image'>{children}</div>
+        <img src='/bine-web.jpg' alt='' className='hidden' />
         <img
           className='fixed top-8 left-8 md:left-auto md:right-8 w-32'
           src='/sigil.png'
