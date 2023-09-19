@@ -4,9 +4,6 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    fontFamily: {
-      title: ['Bismarck'],
-    },
     extend: {},
   },
   plugins: [],
