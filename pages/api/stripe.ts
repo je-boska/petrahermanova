@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ResponseData } from '../../types/shared';
+import { Item, ResponseData } from '../../types/shared';
 import Stripe from 'stripe';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
@@ -22,7 +22,7 @@ export default async function handler(
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         mode: 'payment',
-        line_items: req.body.items.map((item) => {
+        line_items: req.body.items.map((item: Item) => {
           const product = products.get(item.id);
           return {
             price_data: {
