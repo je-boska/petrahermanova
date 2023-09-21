@@ -19,17 +19,19 @@ export default function Ide() {
 
   return (
     <Layout title='Petra Hermanova - In Death’s Eyes'>
-      <div className='text-white grid justify-center items-center h-screen'>
+      <div className='text-white grid justify-center items-center h-screen px-4'>
         {!query.success ? (
           <div className='grid gap-4'>
             <Image
-              className='w-80'
+              className='w-96'
               src='/IDE_artwork.jpeg'
               height={1100}
               width={1100}
               alt='Petra Hermanova - In Death’s Eyes - Vinyl Artwork'
             />
-            <h2>Petra Hermanova - In Death’s Eyes - Vinyl</h2>
+            <h2 className='text-center'>
+              Petra Hermanova - In Death’s Eyes - Vinyl
+            </h2>
             <div className='flex justify-center items-center'>
               <span className='mr-2'>Quantity:</span>
               <input
