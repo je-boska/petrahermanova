@@ -20,7 +20,7 @@ export default async function handler(
   if (req.method === 'POST') {
     try {
       const session = await stripe.checkout.sessions.create({
-        payment_method_types: ['card'],
+        payment_method_types: ['card', 'paypal'],
         mode: 'payment',
         line_items: req.body.items.map((item: Item) => {
           const product = products.get(item.id);
@@ -35,6 +35,9 @@ export default async function handler(
             quantity: item.quantity,
           };
         }),
+        shipping_address_collection: {
+          allowed_countries: ['DE'],
+        },
         success_url: `${process.env.URL}/ide?success=1`,
         cancel_url: `${process.env.URL}/ide?success=0`,
       });
