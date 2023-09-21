@@ -35,8 +35,8 @@ export default async function handler(
             quantity: item.quantity,
           };
         }),
-        success_url: `${process.env.URL}/ide?success=true`,
-        cancel_url: `${process.env.URL}/ide?success=false`,
+        success_url: `${process.env.URL}/ide?success=1`,
+        cancel_url: `${process.env.URL}/ide?success=0`,
       });
       res.json({ url: session.url });
     } catch (e) {
