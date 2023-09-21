@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className='absolute uppercase bottom-4 left-1/2 md:left-4 -translate-x-1/2 md:-translate-x-0 text-white text-center flex gap-3'>
+    <div className='fixed uppercase bottom-4 left-1/2 md:left-4 -translate-x-1/2 md:-translate-x-0 text-white text-center flex gap-3'>
       <a href='/'>home</a>
       <a href='/shows'>shows</a>
       <a
