@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { useMemo, useState } from 'react';
 import Layout from '../components/Layout';
+import Image from 'next/image';
 
 export default function Ide() {
   const [quantity, setQuantity] = useState(0);
@@ -20,15 +21,26 @@ export default function Ide() {
     <Layout title='Petra Hermanova - In Death’s Eyes'>
       <div className='text-white grid justify-center items-center h-screen'>
         {!query.success ? (
-          <div>
-            <input
-              className='text-black w-14 text-right p-2 mr-4'
-              type='number'
-              value={quantity}
-              onChange={(e) => setQuantity(Number(e.target.value))}
+          <div className='grid gap-4'>
+            <Image
+              className='w-80'
+              src='/IDE_artwork.jpeg'
+              height={1100}
+              width={1100}
+              alt='Petra Hermanova - In Death’s Eyes - Vinyl Artwork'
             />
+            <h2>Petra Hermanova - In Death’s Eyes - Vinyl</h2>
+            <div className='flex justify-center items-center'>
+              <span className='mr-2'>Quantity:</span>
+              <input
+                className='text-black w-14 text-right p-2 mr-4'
+                type='number'
+                value={quantity}
+                onChange={(e) => setQuantity(Number(e.target.value))}
+              />
+            </div>
             <button
-              className='border-white border-2 p-2 hover:bg-[rgba(255,255,255,0.2)]'
+              className='border-white border-2 p-2 my-2 hover:bg-[rgba(255,255,255,0.2)]'
               onClick={() => {
                 fetch('/api/stripe', queryOptions)
                   .then((res) => {
