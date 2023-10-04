@@ -37,11 +37,13 @@ export default function Layout({ title, children, bgImage = true }) {
 
       <main>
         {bgImage ? <div className='bg-image'>{children}</div> : <>{children}</>}
-        <img
-          className='fixed top-8 left-8 md:left-auto md:right-8 w-20 md:w-32'
-          src='/sigil.png'
-          alt=''
-        />
+        <a href='/'>
+          <img
+            className='fixed top-8 left-8 md:left-auto md:right-8 w-20 md:w-32'
+            src='/sigil.png'
+            alt=''
+          />
+        </a>
       </main>
       <Footer />
     </>

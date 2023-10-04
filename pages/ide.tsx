@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import Image from 'next/image';
 
 export default function Ide() {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const { query } = useRouter();
 
   const queryOptions = useMemo(() => {
