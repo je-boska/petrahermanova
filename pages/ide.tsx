@@ -18,7 +18,7 @@ export default function Ide() {
   }, [quantity]);
 
   return (
-    <Layout title='Petra Hermanova - In Death’s Eyes'>
+    <Layout title='Petra Hermanova - In Death’s Eyes' bgImage={false}>
       <div className='text-white grid justify-center items-center h-screen px-4'>
         {!query.success ? (
           <div className='grid gap-4'>
@@ -29,9 +29,8 @@ export default function Ide() {
               width={1100}
               alt='Petra Hermanova - In Death’s Eyes - Vinyl Artwork'
             />
-            <h2 className='text-center'>
-              Petra Hermanova - In Death’s Eyes - Vinyl
-            </h2>
+            <h2 className='text-center'>Petra Hermanova - In Death’s Eyes</h2>
+            <p className='text-center'>EUR 30</p>
             <div className='flex justify-center items-center'>
               <span className='mr-2'>Quantity:</span>
               <input

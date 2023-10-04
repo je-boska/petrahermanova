@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 import Footer from '../components/Footer';
 
-export default function Layout({ title, children }) {
+export default function Layout({ title, children, bgImage = true }) {
   return (
     <>
       <Head>
@@ -36,7 +36,7 @@ export default function Layout({ title, children }) {
       </Head>
 
       <main>
-        <div className='bg-image'>{children}</div>
+        {bgImage ? <div className='bg-image'>{children}</div> : <>{children}</>}
         <img
           className='fixed top-8 left-8 md:left-auto md:right-8 w-20 md:w-32'
           src='/sigil.png'
