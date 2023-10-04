@@ -6,14 +6,14 @@ export default function Footer() {
       <a
         href='https://petrahermanova.bandcamp.com/'
         target='_blank'
-        rel='noreferrer'
+        rel='noopener nofollow noreferrer'
       >
         <p className='mb-2'>music</p>
       </a>
       <a
         href='https://www.instagram.com/petrahermanova/'
         target='_blank'
-        rel='noreferrer'
+        rel='noopener nofollow noreferrer'
       >
         <p className='mb-2'>ig</p>
       </a>
