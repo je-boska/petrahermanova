@@ -19,7 +19,7 @@ export default function Ide() {
 
   return (
     <Layout title='Petra Hermanova - In Death’s Eyes' bgImage={false}>
-      <div className='text-white grid justify-center items-center h-screen px-4'>
+      <div className='text-white grid justify-center items-center h-screen px-4 py-20'>
         {!query.success ? (
           <div className='grid gap-4 max-w-lg'>
             <Image
