@@ -32,7 +32,9 @@ export default function Layout({ title, children, bgImage = true }) {
         <meta property='og:image:height' content='628' />
         <meta property='og:image:type' content='image/jpg' />
         <meta property='og:image:alt' content='Petra Hermanova' />
-        <link rel='preload' href='/bine-web.jpg' as='image' />
+        {bgImage ? (
+          <link rel='preload' href='/bine-web.jpg' as='image' />
+        ) : null}
       </Head>
 
       <main>
