@@ -66,6 +66,11 @@ export default async function handler(
             'SE',
           ],
         },
+        shipping_options: [
+          {
+            shipping_rate: 'shr_1NxoheI7UcvUqG4sGml0Nsqb',
+          },
+        ],
         success_url: `${process.env.URL}/ide?success=1`,
         cancel_url: `${process.env.URL}/ide?success=0`,
       });
