@@ -61,7 +61,7 @@ export default function Ide() {
               </a>
               .
             </p>
-            <p>EUR 30 + shipping</p>
+            <p>EUR 35,70 incl. VAT + shipping</p>
             <div className='flex justify-between items-center'>
               <div>
                 <span className='mr-2'>Quantity:</span>

@@ -10,7 +10,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 const products = new Map();
 products.set('ide_vinyl', {
   name: 'Petra Hermanova - In Death’s Eyes - Double Vinyl',
-  priceInCents: 3000,
+  priceInCents: 3570,
 });
 
 export default async function handler(
