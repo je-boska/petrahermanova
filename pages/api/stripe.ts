@@ -2,10 +2,15 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { Item, ResponseData } from '../../types/shared';
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: '2023-08-16',
-  typescript: true,
-});
+const stripe = new Stripe(
+  process.env.ENVIRONMENT === 'production'
+    ? process.env.STRIPE_SECRET_KEY
+    : process.env.STRIPE_SECRET_TEST_KEY,
+  {
+    apiVersion: '2023-08-16',
+    typescript: true,
+  }
+);
 
 const products = new Map();
 products.set('ide_vinyl', {
