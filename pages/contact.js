@@ -14,8 +14,11 @@ export default function Contact() {
           </a>
         </li>
         <li className='pb-2'>info@petrahermanova.com</li>
-        <li>
+        <li className='pb-2'>
           <a href='/imprint'>Imprint and Terms of Service</a>
+        </li>
+        <li>
+          <a href='/privacy'>Privacy Policy</a>
         </li>
       </ul>
     </Layout>

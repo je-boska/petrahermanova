@@ -26,3 +26,14 @@ body {
 ::selection {
   @apply bg-white text-black;
 }
+
+/* Rich text */
+
+.rich-text p,
+.rich-text h2 {
+  @apply pb-4;
+}
+
+.rich-text a {
+  @apply underline;
+}

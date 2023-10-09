@@ -87,6 +87,10 @@ export default function Ide() {
                 Place order
               </button>
             </div>
+            <p className='italic'>* Shipping will start from November 5th</p>
+            <a href='/return-policy' className='underline'>
+              Return policy
+            </a>
           </div>
         ) : null}
 
