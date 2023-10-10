@@ -73,7 +73,7 @@ export default async function handler(
         },
         shipping_options: [
           {
-            shipping_rate: 'shr_1NxoheI7UcvUqG4sGml0Nsqb',
+            shipping_rate: 'shr_1Nzj27I7UcvUqG4stBaVoFW9',
           },
         ],
         success_url: `${process.env.URL}/shop?success=1`,
