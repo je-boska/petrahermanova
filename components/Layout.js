@@ -1,8 +1,8 @@
 import Head from 'next/head';
 
-import Footer from '@components/Footer';
+import Footer from '../components/Footer';
 
-export default function Layout({ title, children }) {
+export default function Layout({ title, children, bgImage = true }) {
   return (
     <>
       <Head>
@@ -32,16 +32,20 @@ export default function Layout({ title, children }) {
         <meta property='og:image:height' content='628' />
         <meta property='og:image:type' content='image/jpg' />
         <meta property='og:image:alt' content='Petra Hermanova' />
-        <link rel='preload' href='/bine-web.jpg' as='image' />
+        {bgImage ? (
+          <link rel='preload' href='/bine-web.jpg' as='image' />
+        ) : null}
       </Head>
 
       <main>
-        <div className='bg-image'>{children}</div>
-        <img
-          className='fixed top-8 left-8 md:left-auto md:right-8 w-20 md:w-32'
-          src='/sigil.png'
-          alt=''
-        />
+        {bgImage ? <div className='bg-image'>{children}</div> : <>{children}</>}
+        <a href='/'>
+          <img
+            className='fixed top-8 left-8 md:left-auto md:right-8 w-20 md:w-32'
+            src='/sigil.png'
+            alt=''
+          />
+        </a>
       </main>
       <Footer />
     </>

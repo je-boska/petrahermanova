@@ -11,3 +11,9 @@ export async function fetchShows() {
   if (shows.items) return shows.items;
   console.log(`Error getting Entries for ${contentType.name}.`);
 }
+
+export async function fetchTOS() {
+  const tos = await client.getEntry('7w4CsHfujxC0Pi2gom6fOz');
+  if (tos) return tos;
+  console.log('Error getting Terms of Service page');
+}

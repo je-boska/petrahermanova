@@ -1,22 +1,11 @@
 export default function Footer() {
   return (
-    <div className='absolute uppercase bottom-4 left-1/2 md:left-4 -translate-x-1/2 md:-translate-x-0 text-white text-center flex gap-3'>
-      <a href='/'>home</a>
-      <a href='/shows'>shows</a>
-      <a
-        href='https://petrahermanova.bandcamp.com/'
-        target='_blank'
-        rel='noreferrer'
-      >
-        <p className='mb-2'>music</p>
-      </a>
-      <a
-        href='https://www.instagram.com/petrahermanova/'
-        target='_blank'
-        rel='noreferrer'
-      >
-        <p className='mb-2'>ig</p>
-      </a>
-    </div>
+    <footer className='fixed bottom-0 h-12 md:h-16 w-full bg-black md:bg-transparent flex items-center justify-center md:justify-start'>
+      <div className='fixed uppercase text-white text-center px-4 flex gap-3'>
+        <a href='/shows'>live</a>
+        <a href='/shop'>shop</a>
+        <a href='/contact'>info</a>
+      </div>
+    </footer>
   );
 }
