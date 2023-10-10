@@ -106,7 +106,7 @@ export default function Shop() {
             <button
               className='border-white mx-auto border-2 p-2 hover:bg-[rgba(255,255,255,0.2)]'
               onClick={() => {
-                window.location.href = '/ide';
+                window.location.href = '/shop';
               }}
             >
               Try again

@@ -14,7 +14,7 @@ const stripe = new Stripe(
 
 const products = new Map();
 products.set('ide_vinyl', {
-  name: 'Petra Hermanova - In Death’s Eyes - Double Vinyl',
+  name: 'Petra Hermanova - In Death’s Eyes - Double Vinyl incl. VAT',
   priceInCents: 3570,
 });
 
@@ -76,8 +76,8 @@ export default async function handler(
             shipping_rate: 'shr_1NxoheI7UcvUqG4sGml0Nsqb',
           },
         ],
-        success_url: `${process.env.URL}/ide?success=1`,
-        cancel_url: `${process.env.URL}/ide?success=0`,
+        success_url: `${process.env.URL}/shop?success=1`,
+        cancel_url: `${process.env.URL}/shop?success=0`,
       });
       res.json({ url: session.url });
     } catch (e) {
