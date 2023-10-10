@@ -28,7 +28,6 @@ export default async function handler(
         payment_method_types: [
           'card',
           'link',
-          'blik',
           'bancontact',
           'eps',
           'giropay',
