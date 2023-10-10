@@ -19,7 +19,7 @@ export default function Ide() {
 
   return (
     <Layout title='Petra Hermanova - In Death’s Eyes' bgImage={false}>
-      <div className='text-white grid justify-center items-center px-4 py-40'>
+      <div className='text-white grid justify-center items-center px-4 py-40 md:py-20'>
         {!query.success ? (
           <div className='grid gap-4 max-w-lg'>
             <Image
@@ -87,7 +87,9 @@ export default function Ide() {
                 Place order
               </button>
             </div>
-            <p className='italic'>* Shipping will start from November 5th</p>
+            <p className='italic'>
+              * Available in the EU. Shipping will start from November 5th.
+            </p>
             <a href='/return-policy' className='underline'>
               Return policy
             </a>
