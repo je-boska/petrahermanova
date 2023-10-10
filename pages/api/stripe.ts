@@ -25,7 +25,15 @@ export default async function handler(
   if (req.method === 'POST') {
     try {
       const session = await stripe.checkout.sessions.create({
-        payment_method_types: ['card', 'paypal'],
+        payment_method_types: [
+          'card',
+          'link',
+          'blik',
+          'bancontact',
+          'eps',
+          'giropay',
+          'ideal',
+        ],
         mode: 'payment',
         line_items: req.body.items.map((item: Item) => {
           const product = products.get(item.id);
