@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import Layout from '../components/Layout';
 import Image from 'next/image';
 
-export default function Ide() {
+export default function Shop() {
   const [quantity, setQuantity] = useState(1);
   const { query } = useRouter();
 
