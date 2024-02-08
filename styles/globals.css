@@ -9,11 +9,12 @@ body {
 
 .bg-image {
   display: block;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(/bine-web.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .rsvp {

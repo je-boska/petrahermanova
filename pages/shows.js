@@ -6,26 +6,42 @@ import cx from 'classnames';
 export default function Shows({ shows }) {
   return (
     <Layout title='Petra Hermanova | Live'>
-      <ul className='absolute top-1/2 -translate-y-1/2 text-white w-full'>
-        {shows
-          .sort((a, b) => (a.dateTime < b.dateTime ? 1 : -1))
-          .map(({ title, dateTime }, idx) => (
-            <li
-              key={idx}
-              className={cx('text-sm sm:text-base font-extralight')}
-            >
-              <div className='flex justify-center flex-col sm:flex-row text-center'>
-                <span
-                  className={cx('mr-2', {
-                    'line-through': dayjs().isAfter(dateTime),
-                  })}
-                >
-                  {dayjs(dateTime).format('DD MM YYYY')}
-                </span>
-                <h3>{title}</h3>
-              </div>
-            </li>
-          ))}
+      <ul className='px-4 md:px-20 py-40 lg:flex text-white'>
+        <div>
+          {shows
+            .sort((a, b) => (a.dateTime < b.dateTime ? 1 : -1))
+            .map(({ title, dateTime }, idx) => (
+              <li key={idx} className={cx('text-[0.925rem] font-extralight')}>
+                <div className='flex flex-col sm:flex-row'>
+                  <span
+                    className={cx('mr-2', {
+                      'line-through': dayjs().isAfter(dateTime),
+                    })}
+                  >
+                    {dayjs(dateTime).format('DD MM YYYY')}
+                    <h3 className='lg:hidden'>{title}</h3>
+                  </span>
+                </div>
+              </li>
+            ))}
+        </div>
+        <div className='hidden lg:block'>
+          {shows
+            .sort((a, b) => (a.dateTime < b.dateTime ? 1 : -1))
+            .map(({ title, dateTime }, idx) => (
+              <li key={idx} className={cx('text-[0.925rem] font-extralight')}>
+                <div className='flex flex-col sm:flex-row'>
+                  <span
+                    className={cx('mr-2', {
+                      'line-through': dayjs().isAfter(dateTime),
+                    })}
+                  >
+                    <h3>{title}</h3>
+                  </span>
+                </div>
+              </li>
+            ))}
+        </div>
       </ul>
     </Layout>
   );
