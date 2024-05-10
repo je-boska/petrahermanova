@@ -2,7 +2,12 @@ import Head from 'next/head';
 
 import Footer from '../components/Footer';
 
-export default function Layout({ title, children, bgImage = true }) {
+export default function Layout({
+  title,
+  children,
+  bgImage = true,
+  noIndex = false,
+}) {
   return (
     <>
       <Head>
@@ -35,6 +40,7 @@ export default function Layout({ title, children, bgImage = true }) {
         {bgImage ? (
           <link rel='preload' href='/bine-web.jpg' as='image' />
         ) : null}
+        {noIndex ? <meta name='robots' content='noindex' /> : null}
       </Head>
 
       <main>

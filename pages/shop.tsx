@@ -87,9 +87,7 @@ export default function Shop() {
                 Place order
               </button>
             </div>
-            <p className='italic'>
-              * Available in the EU. Shipping will start from November 5th.
-            </p>
+            <p className='italic'>* Available in the EU</p>
             <a href='/return-policy' className='underline'>
               Return policy
             </a>
