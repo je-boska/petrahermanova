@@ -35,7 +35,7 @@ export default function Contact() {
             </a>
           </li>
         </div>
-        <li className='pb-8'>info@petrahermanova.com</li>
+        <li className='pb-8 select-none'>info@petrahermanova.com</li>
         <li className='pb-2'>
           <a href='/imprint'>Imprint and Terms of Service</a>
         </li>
