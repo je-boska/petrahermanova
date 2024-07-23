@@ -2,24 +2,32 @@ import { useRouter } from 'next/router';
 import { useMemo, useState } from 'react';
 import Layout from '../components/Layout';
 import Image from 'next/image';
-import { countries } from '../constants';
+import { allCountries, isInEU } from '../utils/countries';
 
-export default function Shop() {
-  const [quantity, setQuantity] = useState(1);
-  const [country, setCountry] = useState('');
-  const [error, setError] = useState(null);
-  const { query } = useRouter();
-
+export async function getStaticProps() {
   const regionNamesInEnglish = new Intl.DisplayNames(['en'], {
     type: 'region',
   });
 
-  const isInEU = useMemo(() => {
-    if (country === 'GB' || country == 'US') {
-      return false;
-    }
-    return true;
-  }, [country]);
+  const countryNames = allCountries.map((code) => ({
+    code,
+    name: regionNamesInEnglish.of(code),
+  }));
+
+  countryNames.sort((a, b) => (a.name > b.name ? 1 : -1));
+
+  return {
+    props: {
+      countryNames,
+    },
+  };
+}
+
+export default function Shop({ countryNames }) {
+  const [quantity, setQuantity] = useState(1);
+  const [country, setCountry] = useState('');
+  const [error, setError] = useState(null);
+  const { query } = useRouter();
 
   const queryOptions = useMemo(() => {
     return {
@@ -29,7 +37,7 @@ export default function Shop() {
         country,
         items: [
           {
-            id: isInEU ? 'ide_vinyl' : 'ide_vinyl_no_vat',
+            id: isInEU(country) ? 'ide_vinyl' : 'ide_vinyl_no_vat',
             name: 'In Death’s Eyes - Vinyl',
             quantity,
           },
@@ -101,15 +109,19 @@ export default function Shop() {
                   onChange={(e) => setCountry(e.target.value)}
                 >
                   <option value=''></option>
-                  {countries.map((country) => (
-                    <option key={country} value={country}>
-                      {regionNamesInEnglish.of(country)}
-                    </option>
-                  ))}
+                  {countryNames.map(
+                    (country: { code: string; name: string }) => (
+                      <option key={country.code} value={country.code}>
+                        {country.name}
+                      </option>
+                    )
+                  )}
                 </select>
               </div>
             </div>
-            <p>{isInEU ? 'EUR 35,70 incl. VAT' : 'EUR 30'} + shipping</p>
+            <p>
+              {isInEU(country) ? 'EUR 35,70 incl. VAT' : 'EUR 30'} + shipping
+            </p>
             <button
               className='border-white border-2 p-2 my-2 hover:bg-[rgba(255,255,255,0.2)]'
               onClick={() => {
@@ -129,7 +141,6 @@ export default function Shop() {
               Place order
             </button>
             {error ? <p className=''>{error}</p> : null}
-            <p className='italic'>* Available in the EU/EEA, UK and US</p>
             <span>
               <a href='/return-policy' className='underline'>
                 Return policy

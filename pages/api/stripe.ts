@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { Item, ResponseData } from '../../types/shared';
 import Stripe from 'stripe';
-import { countries } from '../../constants';
+import { allCountries, isInEU } from '../../utils/countries';
 
 const stripe = new Stripe(
   process.env.ENVIRONMENT === 'production'
@@ -29,7 +29,7 @@ export default async function handler(
 ) {
   if (req.method === 'POST') {
     try {
-      if (!countries.includes(req.body.country)) {
+      if (!allCountries.includes(req.body.country)) {
         return;
       }
 
@@ -67,9 +67,15 @@ export default async function handler(
                 ? 'shr_1PfgngI7UcvUqG4sqsyf22BF'
                 : req.body.country === 'CZ'
                 ? 'shr_1PfgrGI7UcvUqG4sYJ1caEUH'
-                : req.body.country === 'US'
-                ? 'shr_1PfgpoI7UcvUqG4s22ZcbkSz'
-                : 'shr_1PfgpEI7UcvUqG4scgI8uC4O',
+                : isInEU(req.body.country)
+                ? 'shr_1PfgpEI7UcvUqG4scgI8uC4O'
+                : req.body.country === 'GB'
+                ? 'shr_1PfgpEI7UcvUqG4scgI8uC4O'
+                : req.body.country === 'NO'
+                ? 'shr_1PfgpEI7UcvUqG4scgI8uC4O'
+                : req.body.country === 'CH'
+                ? 'shr_1PfgpEI7UcvUqG4scgI8uC4O'
+                : 'shr_1PfhNQI7UcvUqG4smUXVxHRK',
           },
         ],
         success_url: `${process.env.URL}/shop?success=1`,
