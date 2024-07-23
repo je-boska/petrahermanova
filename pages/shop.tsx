@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 export default function Shop() {
   const [quantity, setQuantity] = useState(1);
+  const [region, setRegion] = useState('');
   const { query } = useRouter();
 
   const queryOptions = useMemo(() => {
@@ -71,6 +72,12 @@ export default function Shop() {
                   value={quantity}
                   onChange={(e) => setQuantity(Number(e.target.value))}
                 />
+                <span className='mr-2'>Country:</span>
+                <select className='text-black w-24 text-right px-2 py-3'>
+                  <option>EU/EEA</option>
+                  <option>UK</option>
+                  <option>US</option>
+                </select>
               </div>
               <button
                 className='border-white border-2 p-2 my-2 hover:bg-[rgba(255,255,255,0.2)]'
@@ -88,9 +95,11 @@ export default function Shop() {
               </button>
             </div>
             <p className='italic'>* Available in the EU</p>
-            <a href='/return-policy' className='underline'>
-              Return policy
-            </a>
+            <span>
+              <a href='/return-policy' className='underline'>
+                Return policy
+              </a>
+            </span>
           </div>
         ) : null}
 
