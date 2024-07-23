@@ -14,6 +14,13 @@ export default function Shop() {
     type: 'region',
   });
 
+  const isInEU = useMemo(() => {
+    if (country === 'GB' || country == 'US') {
+      return false;
+    }
+    return true;
+  }, [country]);
+
   const queryOptions = useMemo(() => {
     return {
       method: 'POST',
@@ -22,7 +29,7 @@ export default function Shop() {
         country,
         items: [
           {
-            id: 'ide_vinyl',
+            id: isInEU ? 'ide_vinyl' : 'ide_vinyl_no_vat',
             name: 'In Death’s Eyes - Vinyl',
             quantity,
           },
@@ -30,13 +37,6 @@ export default function Shop() {
       }),
     };
   }, [quantity, country]);
-
-  const isInEU = useMemo(() => {
-    if (country === 'GB' || country == 'US') {
-      return false;
-    }
-    return true;
-  }, [country]);
 
   return (
     <Layout title='Petra Hermanova - In Death’s Eyes' bgImage={false}>

@@ -33,8 +33,6 @@ export default async function handler(
         return;
       }
 
-      const isInEU = req.body.country !== 'GB' && req.body.country !== 'US';
-
       const session = await stripe.checkout.sessions.create({
         payment_method_types: [
           'card',
@@ -64,9 +62,14 @@ export default async function handler(
 
         shipping_options: [
           {
-            shipping_rate: isInEU
-              ? 'shr_1Nzj27I7UcvUqG4stBaVoFW9'
-              : 'shr_1Pff3HI7UcvUqG4sVlcKh2qP',
+            shipping_rate:
+              req.body.country === 'DE'
+                ? 'shr_1PfgngI7UcvUqG4sqsyf22BF'
+                : req.body.country === 'CZ'
+                ? 'shr_1PfgrGI7UcvUqG4sYJ1caEUH'
+                : req.body.country === 'US'
+                ? 'shr_1PfgpoI7UcvUqG4s22ZcbkSz'
+                : 'shr_1PfgpEI7UcvUqG4scgI8uC4O',
           },
         ],
         success_url: `${process.env.URL}/shop?success=1`,
