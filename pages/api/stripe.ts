@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { Item, ResponseData } from '../../types/shared';
 import Stripe from 'stripe';
+import { allCountries, isInEU } from '../../utils/countries';
 
 const stripe = new Stripe(
   process.env.ENVIRONMENT === 'production'
@@ -17,6 +18,10 @@ products.set('ide_vinyl', {
   name: 'Petra Hermanova - In Death’s Eyes - Double Vinyl incl. VAT',
   priceInCents: 3570,
 });
+products.set('ide_vinyl_no_vat', {
+  name: 'Petra Hermanova - In Death’s Eyes - Double Vinyl',
+  priceInCents: 3000,
+});
 
 export default async function handler(
   req: NextApiRequest,
@@ -24,6 +29,10 @@ export default async function handler(
 ) {
   if (req.method === 'POST') {
     try {
+      if (!allCountries.includes(req.body.country)) {
+        return;
+      }
+
       const session = await stripe.checkout.sessions.create({
         payment_method_types: [
           'card',
@@ -48,39 +57,25 @@ export default async function handler(
           };
         }),
         shipping_address_collection: {
-          allowed_countries: [
-            'AT',
-            'BE',
-            'BG',
-            'HR',
-            'CY',
-            'CZ',
-            'DK',
-            'EE',
-            'FI',
-            'FR',
-            'DE',
-            'GR',
-            'HU',
-            'IE',
-            'IT',
-            'LV',
-            'LT',
-            'LU',
-            'MT',
-            'NL',
-            'PL',
-            'PT',
-            'RO',
-            'SK',
-            'SI',
-            'ES',
-            'SE',
-          ],
+          allowed_countries: [req.body.country],
         },
+
         shipping_options: [
           {
-            shipping_rate: 'shr_1Nzj27I7UcvUqG4stBaVoFW9',
+            shipping_rate:
+              req.body.country === 'DE'
+                ? 'shr_1PfgngI7UcvUqG4sqsyf22BF'
+                : req.body.country === 'CZ'
+                ? 'shr_1PfgrGI7UcvUqG4sYJ1caEUH'
+                : isInEU(req.body.country)
+                ? 'shr_1PfgpEI7UcvUqG4scgI8uC4O'
+                : req.body.country === 'GB'
+                ? 'shr_1PfgpEI7UcvUqG4scgI8uC4O'
+                : req.body.country === 'NO'
+                ? 'shr_1PfgpEI7UcvUqG4scgI8uC4O'
+                : req.body.country === 'CH'
+                ? 'shr_1PfgpEI7UcvUqG4scgI8uC4O'
+                : 'shr_1PfhNQI7UcvUqG4smUXVxHRK',
           },
         ],
         success_url: `${process.env.URL}/shop?success=1`,

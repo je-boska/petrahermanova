@@ -10,11 +10,13 @@ body {
 .bg-image {
   display: block;
   min-height: 100vh;
+  max-height: 100vh;
   background-image: url(/petra-hermanova_by_camille-blake.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  overflow: scroll;
 }
 
 .rsvp {
