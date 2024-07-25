@@ -43,8 +43,8 @@ export default function Layout({
         {noIndex ? <meta name='robots' content='noindex' /> : null}
       </Head>
 
-      <main>
-        {bgImage ? <div className='bg-image'>{children}</div> : <>{children}</>}
+      <main className={bgImage ? 'bg-image' : null}>
+        {children}
         <a href='/'>
           <img
             className='fixed top-8 right-8 w-20 md:w-32'
