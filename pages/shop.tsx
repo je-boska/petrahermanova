@@ -104,7 +104,7 @@ export default function Shop({ countryNames }) {
               <div className='flex justify-between'>
                 <span className='mr-2'>Country:</span>
                 <select
-                  className='text-black text-right px-2 py-3'
+                  className='text-black text-right px-2 py-3 w-40'
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
                 >
