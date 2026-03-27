@@ -1,6 +1,11 @@
 import Head from 'next/head';
+import { Roboto } from 'next/font/google';
+import Nav from '../components/Nav';
 
-import Footer from '../components/Footer';
+const roboto = Roboto({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['100', '300', '400'],
+});
 
 export default function Layout({
   title,
@@ -9,7 +14,7 @@ export default function Layout({
   noIndex = false,
 }) {
   return (
-    <>
+    <div className={roboto.className}>
       <Head>
         <title>{title}</title>
         <link rel='icon' href='/favicon.ico' />
@@ -44,16 +49,18 @@ export default function Layout({
       </Head>
 
       <main className={bgImage ? 'bg-image' : null}>
+        <Nav />
         {children}
-        <a href='/'>
-          <img
-            className='fixed top-8 right-8 w-20 md:w-32'
-            src='/sigil.png'
-            alt=''
-          />
-        </a>
+        <div className='fixed top-2 md:top-auto md:bottom-4 md:left-4 w-full md:w-auto'>
+          <a href='/'>
+            <img
+              className='mx-auto w-full px-8 max-w-[400px] md:w-[500px]'
+              src='/transparentpet.png'
+              alt=''
+            />
+          </a>
+        </div>
       </main>
-      <Footer />
-    </>
+    </div>
   );
 }

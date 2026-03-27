@@ -4,26 +4,19 @@
 
 html,
 body {
-  @apply bg-black;
+  @apply bg-dark text-offwhite;
 }
 
 .bg-image {
   display: block;
   min-height: 100vh;
   max-height: 100vh;
-  background-image: url(/petra-hermanova_by_camille-blake.jpg);
+  background-image: url(/petra_hermanova_by_evelyn_bencicova.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   overflow: scroll;
-}
-
-.rsvp {
-  background-image: url(/IDE_artwork.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 ::selection {
@@ -39,4 +32,9 @@ body {
 
 .rich-text a {
   @apply underline;
+}
+
+.rich-text ul,
+.rich-text li p {
+  @apply mb-0 pb-2;
 }
