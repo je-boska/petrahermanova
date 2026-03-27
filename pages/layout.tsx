@@ -49,6 +49,7 @@ export default function Layout({
       </Head>
 
       <main className={bgImage ? 'bg-image' : null}>
+        <Nav />
         {children}
         <div className='fixed top-2 md:top-auto md:bottom-4 md:left-4 w-full md:w-auto'>
           <a href='/'>
@@ -60,7 +61,6 @@ export default function Layout({
           </a>
         </div>
       </main>
-      <Nav />
     </div>
   );
 }

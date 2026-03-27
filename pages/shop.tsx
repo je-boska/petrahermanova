@@ -62,16 +62,8 @@ export default function Shop({ countryNames }) {
               <h2>Petra Hermanova - In Death’s Eyes</h2>
               <p>
                 2xLPs on heavy 180g black vinyl in a full colour matt laminated
-                gatefold sleeve with lyrics inside. Designed by{' '}
-                <a
-                  className='underline'
-                  href='https://odious.haus/'
-                  target='_blank'
-                  rel='noopener nofollow noreferrer'
-                >
-                  Odious Rot
-                </a>
-                , with artwork by{' '}
+                gatefold sleeve with lyrics inside. Designed by Odious Rot, with
+                artwork by{' '}
                 <a
                   className='underline'
                   href='https://enesguc.com/'
@@ -124,7 +116,7 @@ export default function Shop({ countryNames }) {
                 {isInEU(country) ? 'EUR 35,70 incl. VAT' : 'EUR 30'} + shipping
               </p>
               <button
-                className='border-white border-2 p-2 my-2 hover:bg-[rgba(255,255,255,0.2)]'
+                className='border-white border p-2 my-2 hover:bg-[rgba(255,255,255,0.2)] transition-all duration-300'
                 onClick={() => {
                   if (!country) {
                     setError('Please select a country');
