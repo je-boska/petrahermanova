@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Footer from '../components/Footer';
+import Nav from './Nav';
 
 export default function Layout({
   title,
@@ -45,15 +45,17 @@ export default function Layout({
 
       <main className={bgImage ? 'bg-image' : null}>
         {children}
-        <a href='/'>
-          <img
-            className='fixed top-8 right-8 w-20 md:w-32'
-            src='/sigil.png'
-            alt=''
-          />
-        </a>
+        <div className='fixed top-2 md:bottom-4 w-full'>
+          <a href='/'>
+            <img
+              className='mx-auto w-full px-8 max-w-[400px] md:w-[500px]'
+              src='/transparentpet.png'
+              alt=''
+            />
+          </a>
+        </div>
       </main>
-      <Footer />
+      <Nav />
     </>
   );
 }

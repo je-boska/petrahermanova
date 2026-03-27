@@ -6,6 +6,8 @@ import cx from 'classnames';
 export default function Shows({ shows }) {
   return (
     <Layout title='Petra Hermanova | Live'>
+      <div className='fixed bottom-0 w-full h-80 bg-gradient-to-b from-transparent to-black' />
+
       <ul className='px-4 md:px-20 py-40 md:flex text-white'>
         <div>
           {shows
@@ -14,7 +16,7 @@ export default function Shows({ shows }) {
               <li
                 key={idx}
                 className={cx(
-                  'text-sm sm:text-[0.925rem] font-extralight mb-2 md:mb-0'
+                  'text-sm sm:text-[0.925rem] font-extralight mb-2 md:mb-0',
                 )}
               >
                 <div className='flex flex-col'>
