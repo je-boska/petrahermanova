@@ -1,6 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Layout from '../components/Layout';
 import { fetchTOS } from '../utils/queries';
+import Layout from './layout';
 
 export default function Imprint({ tos }) {
   return (

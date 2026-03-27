@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import { useMemo, useState } from 'react';
-import Layout from '../components/Layout';
 import Image from 'next/image';
 import { allCountries, isInEU } from '../utils/countries';
+import Layout from './layout';
 
 export async function getStaticProps() {
   const regionNamesInEnglish = new Intl.DisplayNames(['en'], {
@@ -114,7 +114,7 @@ export default function Shop({ countryNames }) {
                       <option key={country.code} value={country.code}>
                         {country.name}
                       </option>
-                    )
+                    ),
                   )}
                 </select>
               </div>

@@ -1,7 +1,7 @@
 import { fetchShows } from '../utils/queries';
-import Layout from '../components/Layout';
 import dayjs from 'dayjs';
 import cx from 'classnames';
+import Layout from './layout';
 
 export default function Shows({ shows }) {
   return (

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Roboto } from 'next/font/google';
-import Nav from './Nav';
+import Nav from '../components/Nav';
 
 const roboto = Roboto({
   subsets: ['latin', 'latin-ext'],
