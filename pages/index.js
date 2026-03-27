@@ -15,7 +15,7 @@ export default function Shows({ shows }) {
             'linear-gradient(to bottom, transparent, black 30%, black 80%, transparent)',
         }}
       >
-        <ul className='md:flex text-white'>
+        <ul className='md:flex text-offwhite'>
           <div>
             {shows
               .sort((a, b) => (a.dateTime < b.dateTime ? 1 : -1))

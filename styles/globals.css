@@ -4,7 +4,7 @@
 
 html,
 body {
-  @apply bg-black;
+  @apply bg-dark text-offwhite;
 }
 
 .bg-image {

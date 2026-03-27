@@ -13,7 +13,7 @@ export default function IDE() {
           />
           <button
             type='submit'
-            className='bg-black p-2 my-2 hover:bg-[rgba(0,0,0,0.6)] text-white transition-all duration-300'
+            className='bg-dark p-2 my-2 hover:bg-[rgba(0,0,0,0.6)] text-offwhite transition-all duration-300'
           >
             Submit Code
           </button>

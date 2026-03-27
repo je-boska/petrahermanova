@@ -48,7 +48,7 @@ export default function Shop({ countryNames }) {
 
   return (
     <Layout title='Petra Hermanova - In Death’s Eyes' bgImage={false}>
-      <div className='text-white grid justify-center items-center px-4 py-40 md:py-56 md:px-8'>
+      <div className='text-offwhite grid justify-center items-center px-4 py-40 md:py-56 md:px-8'>
         {!query.success ? (
           <div className='grid md:grid-cols-2 gap-4 max-w-lg md:max-w-[1000px]'>
             <Image

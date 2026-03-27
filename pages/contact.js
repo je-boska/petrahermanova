@@ -3,7 +3,7 @@ import Layout from './layout';
 export default function Contact() {
   return (
     <Layout title='Petra Hermanova | Contact'>
-      <ul className='text-white pt-56 px-4 md:px-20'>
+      <ul className='text-offwhite pt-56 px-4 md:px-20'>
         <div className='flex gap-2 pb-2'>
           <li className='underline'>
             <a

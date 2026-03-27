@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        offwhite: '#e0e0e0',
+        dark: '#0f0f0f',
+      },
       fontFamily: {
         roboto: ['Roboto'],
       },
