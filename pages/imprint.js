@@ -5,7 +5,7 @@ import Layout from './layout';
 export default function Imprint({ tos }) {
   return (
     <Layout bgImage={false} title='Imprint and Terms of Service' noIndex>
-      <div className='text-gray-300 pt-40 md:pt-8 px-4 max-w-4xl'>
+      <div className='text-gray-300 pt-40 px-4 md:px-20 max-w-4xl'>
         <div className='rich-text pb-8'>
           {documentToReactComponents(tos.content)}
         </div>

@@ -17,3 +17,9 @@ export async function fetchTOS() {
   if (tos) return tos;
   console.log('Error getting Terms of Service page');
 }
+
+export async function fetchAbout() {
+  const about = await client.getEntry('5T4h6TNVrohD89h5FJhfz9');
+  if (about) return about;
+  console.log('Error fetching About page');
+}

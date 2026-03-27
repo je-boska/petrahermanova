@@ -14,7 +14,7 @@ export default function Layout({
   noIndex = false,
 }) {
   return (
-    <html lang='en' className={roboto.className}>
+    <div className={roboto.className}>
       <Head>
         <title>{title}</title>
         <link rel='icon' href='/favicon.ico' />
@@ -61,6 +61,6 @@ export default function Layout({
         </div>
       </main>
       <Nav />
-    </html>
+    </div>
   );
 }

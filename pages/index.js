@@ -7,7 +7,7 @@ export default function Shows({ shows }) {
   return (
     <Layout title='Petra Hermanova | Live'>
       <div
-        className='h-[90vh] overflow-y-auto px-4 md:px-20 pt-56 pb-40'
+        className='h-[90vh] overflow-y-auto px-4 md:px-20 py-56'
         style={{
           maskImage:
             'linear-gradient(to bottom, transparent, black 30%, black 80%, transparent)',

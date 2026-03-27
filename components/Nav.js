@@ -4,7 +4,8 @@ export default function Nav() {
       <div className='fixed uppercase text-white text-center px-20 flex gap-3'>
         <a href='/'>live</a>
         <a href='/shop'>shop</a>
-        <a href='/contact'>info</a>
+        <a href='/about'>about</a>
+        <a href='/contact'>contact</a>
       </div>
     </footer>
   );

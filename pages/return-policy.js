@@ -3,7 +3,7 @@ import Layout from './layout';
 export default function Returns() {
   return (
     <Layout bgImage={false} title='Return Policy'>
-      <div className='text-gray-300 pt-40 md:pt-8 px-4 max-w-4xl'>
+      <div className='text-gray-300 pt-40 px-4 md:px-20 max-w-4xl'>
         <h1 className='uppercase font-bold pb-2'>Return Policy</h1>
         <p className='pb-2'>
           You may return any product purchased by us within 14 days of receipt.

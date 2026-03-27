@@ -3,7 +3,7 @@ import Layout from './layout';
 export default function Privacy() {
   return (
     <Layout bgImage={false}>
-      <div className='rich-text text-gray-300 py-40 md:pt-8 px-4 max-w-4xl'>
+      <div className='rich-text text-gray-300 py-40 px-4 md:px-20 max-w-4xl'>
         <h1 className='uppercase font-bold pb-4'>Privacy Policy</h1>
         <p>Last updated October 09, 2023</p>
         <h2 className='font-bold'>Data Collection and Storage</h2>
