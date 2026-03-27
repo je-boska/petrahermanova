@@ -123,9 +123,10 @@ export default function Shop({ countryNames }) {
                     return;
                   }
                   fetch('/api/stripe', queryOptions)
-                    .then((res) => {
+                    .then(async (res) => {
                       if (res.ok) return res.json();
-                      return res.json().then((json) => Promise.reject(json));
+                      const json = await res.json();
+                      return await Promise.reject(json);
                     })
                     .then((res) => (window.location.href = res.url))
                     .catch((e) => console.error(e.error));
@@ -134,11 +135,17 @@ export default function Shop({ countryNames }) {
                 Place order
               </button>
               {error ? <p className=''>{error}</p> : null}
-              <span>
-                <a href='/return-policy' className='underline'>
-                  Return policy
-                </a>
-              </span>
+              <div className='underline'>
+                <p>
+                  <a href='/return-policy'>Return policy</a>
+                </p>
+                <p>
+                  <a href='/imprint'>Imprint and Terms of Service</a>
+                </p>
+                <p>
+                  <a href='/privacy'>Privacy Policy</a>
+                </p>
+              </div>
             </div>
           </div>
         ) : null}
